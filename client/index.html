@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link href="css/tictactoe.css" rel="stylesheet"/>
+    <link href="lib/bootstrap-css-only/css/bootstrap.css" rel="stylesheet">
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="views/TicTacToeController.js"></script> 
+    <script src="services/TicTacToeBoardService.js"></script>
+    <script src="services/TicTacToePlayerService.js"></script>       
+    <script src="services/TicTacToeGameService.js"></script> 
+    <script src="app.js"></script>
+    <title>Tic Tac Toe</title>
+  </head>
+  <body ng-app="starter">
+    <div class="container" ng-view>
+    </div>
+  </body>
+</html>

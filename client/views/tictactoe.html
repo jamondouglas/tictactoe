@@ -1,0 +1,21 @@
+<div ng-controller="TicTacToeController">
+  <div class="row">
+    <div class=""col-xs-12 col-md-8"">
+      <button id="start-game" ng-model="gameStart" ng-click="data.startGame();gameStart=true" ng-init="gameStart=false">Start new game</button>  
+    </div>
+    <div class="col-xs-6 col-md-4">
+      <span ng-if="gameStart">Current Player: {{data.getCurrentPlayer()}}|| Status : {{data.getStatusMessage()}}
+      </span> 
+    </div>
+  </div>
+
+  <div class=" board row">
+    <div class="col-xs-4" ng-repeat="row in data.grid track by $index">
+      <div class="box" ng-repeat="col in data.grid track by $index" data-col="{{$index}}" data-row="{{$parent.$index}}" ng-click="data.markSquare($index, $parent.$index)">
+        <span ng-class="data.isThreeInARow($index, $parent.$index)">
+          {{data.getSquare($index, $parent.$index)}}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

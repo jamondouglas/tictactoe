@@ -1,0 +1,30 @@
+{
+  "name": "tictactoe",
+  "version": "0.0.0",
+  "authors": [
+    "jamondouglas <terrildouglas@gmail.com>"
+  ],
+  "description": "tic tac toe game",
+  "main": "index.html",
+  "keywords": [
+    "tic",
+    "tac",
+    "toe"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.7",
+    "angular-route": "~1.3.7",
+    "angular-bootstrap": "~0.12.0",
+    "bootstrap-css-only": "~3.3.1"
+  }
+}
