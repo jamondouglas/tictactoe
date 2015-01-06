@@ -17,6 +17,6 @@
     "main-bower-files": "^2.4.1"
   },
   "scripts" : {
-    "postinstall": "bash ./post_install.sh"
+    "postinstall": "bower install"
   }
 }
