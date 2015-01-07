@@ -1,25 +1,66 @@
 angular.module('TicTacToe.Board',[])
 .factory('Board',function(gridSize){
   // var board;
-
-  var Board = function(humanPlayer, computerPlayer, gridSize) {
-    this.grid  =  new Array(gridSize);
-    //console.log("Grid size should be 3 ", this.grid);
-    this.board = [];
-    this.humanPlayer = humanPlayer;
-    this.computerPlayer = computerPlayer;
-    this.currentPlayer = '';
-    this.totalPlays = 0;
-    this.X = -1;
-    this.O = 1;
-    this.symbols = ['O','X'];
-    this.winningCombo = [];
-    this.winningCombos = [];
-    this.winner = null;
-    this.threeInARow = 'bold red';
-    // winningCombos : ,
-    // winningCombo :
+  var Board = function(gridSize){
+    this._data = {
+      size : gridSize * gridSize,
+      grid : null,
+      turns: gridSize * gridSize,
+      isValid : true
+    };
   };
+
+  Board.prototype = {
+    placePiece : function(){
+
+    },
+    hasWon : function(){
+
+    },
+    createBoard : function(){
+      this.set('grid',new Array(this.get('size')));
+      //return new Array(this.get('size'));
+    },
+    resetBoard : function(){
+
+    },
+    convertIndexToRow : function(index){
+      return index/ this.get('size');
+    },
+    convertIndexToColumn : function(index){
+      return index % this.get('size');
+    },
+    convertRowColumnToIndex : function(row, column){
+      return row * this.get('size') + column;
+    },
+    get : function(key){
+      return this._data[key];
+    },
+    set : function(key, value){
+      this._data[key] = value;
+    }
+  };
+  return {
+    board : Board
+  }
+  // var Board = function(humanPlayer, computerPlayer, gridSize) {
+  //   this.grid  =  new Array(gridSize);
+  //   //console.log("Grid size should be 3 ", this.grid);
+  //   this.board = [];
+  //   this.humanPlayer = humanPlayer;
+  //   this.computerPlayer = computerPlayer;
+  //   this.currentPlayer = '';
+  //   this.totalPlays = 0;
+  //   this.X = -1;
+  //   this.O = 1;
+  //   this.symbols = ['O','X'];
+  //   this.winningCombo = [];
+  //   this.winningCombos = [];
+  //   this.winner = null;
+  //   this.threeInARow = 'bold red';
+  //   // winningCombos : ,
+  //   // winningCombo :
+  // };
 
   Board.prototype.switchCurrentPlayer = function(){
     // console.log("This is the current Player", this.currentPlayer);
@@ -385,5 +426,5 @@ angular.module('TicTacToe.Board',[])
   // var board = function(){
   //   console.log("A board has been created.");
   // }
-  return Board;
+  //return Board;
 });

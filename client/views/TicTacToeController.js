@@ -48,8 +48,9 @@ angular.module('tictactoe',['TicTacToe.Game'])
     },
 
     startGame: function(){ 
-      Game.startGame();
-      // console.log(game, " is game object");
+      debugger;
+      var game = new Game.game(gridSize);
+      game.board.createBoard();
     },
     getCurrentPlayer: function(){
       return Game.getCurrentPlayer();
