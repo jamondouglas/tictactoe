@@ -4,7 +4,6 @@ angular.module('TicTacToe.Player',[])
   var Player = function(symbol){
     this.symbol = symbol;
     this.plays = 0;
-  }
-
+  };
   return Player;
 });
