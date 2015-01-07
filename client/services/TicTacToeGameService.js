@@ -32,7 +32,7 @@ angular.module('TicTacToe.Game',['TicTacToe.Board'])
       console.log(game," Game object");
       if(!game.board.winner && !game.board.isFull()){
         if(game.board.currentPlayer == game.board.computerPlayer){
-          var x = game.board.computerMove(0,-1,-100,100, game.board.totalPlays)[1];
+          var x = game.board.computerMove(-1,-100,100, game.board.totalPlays)[1];
           game.board.markSquare(x);
           game.board.switchCurrentPlayer();
           if(game.board.winner === game.board.computerPlayer){
